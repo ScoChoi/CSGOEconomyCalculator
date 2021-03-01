@@ -18,8 +18,29 @@ function App() {
   return (
 
     <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl" h={10}>
-      <Button colorScheme="red" align="center">T</Button> <Button colorScheme="blue" align="center">CT</Button>
+      <Box 
+         
+        textAlign="center" 
+        letterSpacing="wide" 
+        height="16" 
+        justifyContent="center" 
+        alignItems="center" 
+        display="flex">
+
+      <Button 
+        colorScheme="red" 
+        fontSize="3xl" 
+      >
+        T
+      </Button> 
+      
+      <Button 
+        colorScheme="blue" 
+        fontSize="3xl"  
+      >
+        CT
+      </Button>
+
       </Box>
 {/*}
       <Box textAlign="center" fontSize="xl">
