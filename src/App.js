@@ -6,22 +6,24 @@ import {
   //Link,
   //VStack,
   //Code,
-  //Grid,
+  Flex,
+  Spacer,
   theme,
   Button,
+  Progress,
+  Badge,
   //ButtonGroup
 } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { Logo } from './Logo';
+import { MinusIcon } from '@chakra-ui/icons'
+
 
 function App() {
   return (
 
     <ChakraProvider theme={theme}>
       <Box 
-         
-        textAlign="center" 
-        letterSpacing="wide" 
         height="16" 
         justifyContent="center" 
         alignItems="center" 
@@ -29,8 +31,7 @@ function App() {
 
       <Button 
         colorScheme="red" 
-        fontSize="3xl" 
-      >
+        fontSize="3xl">
         T
       </Button> 
       
@@ -40,9 +41,27 @@ function App() {
       >
         CT
       </Button>
-
       </Box>
-{/*}
+      <Box mx="100">
+        <Progress size="lg" value={2} max={30} min={1}></Progress>
+      </Box>
+
+      <Flex>
+        <Box>
+          <MinusIcon />
+          <MinusIcon />
+          <MinusIcon />
+          <MinusIcon />
+        </Box>
+        <Spacer />
+        <Box>
+          <MinusIcon />
+          <MinusIcon />
+          <MinusIcon />
+          <MinusIcon />
+        </Box>
+      </Flex>
+{/*
       <Box textAlign="center" fontSize="xl">
         <Grid minH="100vh" p={3}>
           <ColorModeSwitcher justifySelf="flex-end" />
