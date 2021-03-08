@@ -1,11 +1,16 @@
 import React from 'react';
 import {
+  Wrap,
+  WrapItem,
+  Avatar,
+  Image,
+  Grid,
   ChakraProvider,
   Box,
-  //Text,
-  //Link,
-  //VStack,
-  //Code,
+  Center,
+  Text,
+  VStack,
+  Code,
   Flex,
   Spacer,
   theme,
@@ -23,11 +28,19 @@ import {
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { Logo } from './Logo';
 import { FaMinus } from 'react-icons/fa';
+import {Route, Link} from 'react-router-dom';
+import side from "./side"
+import calculator from "./calculator"
 
 function App() {
   return (
- 
+    <div ClassName="App">
+      <Route path="/" component={side} />
+      <Route exact path="/calculator" component={calculator} />
+    </div>
+    /*
     <ChakraProvider theme={theme}>
+      
       <Box
         textAlign="center"
         fontFamily="sans-serif"
@@ -36,31 +49,18 @@ function App() {
         justifyContent="center" 
         alignItems="center" 
         display="flex"
-
       >
-      Choose Starting Side
+      <text>Choose Starting Side</text>
       </Box>
-      
-      <ButtonGroup
-        justifyContent="center"
-        display="flex"
-      >
-        <Button
-          colorScheme="red"
-          fontSize="3xl"
-          padding="6"
-          marginRight="5"
-        >
-          T
+
+      <Center>
+        <Button variant="ghost" width="10" marginRight="12">
+          <Avatar size="lg" name="T" src="assets/images/tsidelogo.png" />
         </Button>
-        <Button
-          colorScheme="blue"
-          fontSize="3xl"
-          padding="6"
-        >
-          CT
+        <Button variant="ghost" width="10">
+          <Avatar name="CT" src="assets/images/ctsidelogo.jpg" />
         </Button>
-      </ButtonGroup> 
+      </Center>
 
       <Box mx="100">
         <Progress size="lg" 
@@ -104,29 +104,9 @@ function App() {
           <option>Enemy Team T-side Bomb Explodes</option>
         </Select>
       </FormControl>
-{/*
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
-        </Grid>
-      </Box>
-  */}
+
     </ChakraProvider>
+    */
     
   );
 }

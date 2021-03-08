@@ -1,0 +1,19 @@
+.tsidebutton {
+    width: 150px;
+    height: 150px;
+    display: block;
+    border-radius: 75px;
+    background-image: url('./assets/images/tsidelogo.png');
+    background-size: cover;
+    border-width: 5px;
+}
+
+.ctsidebutton {
+    width: 150px;
+    height: 150px;
+    display: block;
+    border-radius: 75px;
+    background-image: url('./assets/images/ctsidelogo.jpg');
+    background-size: cover;
+    border-width: 5px;
+}
