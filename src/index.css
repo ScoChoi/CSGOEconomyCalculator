@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+html {
+  height: 100%;
+  margin: 0;
+}
+
+h1 {
+  position: absolute;
+  align-self: top;
+  left: 39%;
+  color:white;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.ctsidebutton, .tsidebutton {
+  margin:0 auto;
+  display:inline-block;
+  margin-top: 150px;
+}
+
+.tsidebutton {
+  width: 150px;
+  height: 150px;
+  display: block;
+  border-radius: 75px;
+  background-image: url('./images/tsidelogo.jpg');
+  background-size: cover;
+  border-width: 5px;
+  float: left;
+}
+
+.ctsidebutton {
+  width: 150px;
+  height: 150px;
+  display: block;
+  border-radius: 75px;
+  background-image: url('./images/ctsidelogo.jpg');
+  background-size: cover;
+  border-width: 5px;
+  float: right;
+}
+
+.box {
+  display: flex;
+  
+  height: 50.807vmax;
+  background-image: url('./images/Background.jpg');
+  background-size: cover;
+}
+
