@@ -120,7 +120,7 @@ h2 {
 
 .checked::before {
   position: absolute;
-  left: .4rem;
+  right: .4rem;
   content: '✓';
   font-weight: 600;
 }
