@@ -1,39 +1,51 @@
 import React from 'react';
-import {Route, Link, Redirect} from 'react-router-dom';
+import ReactDOM from 'react-dom';
 import './side.css';
 
-var enemy_is_t = true;
+class Square extends React.Component {
+    render() {
+      return (
+        <button className="square">
+          {/* TODO */}
+        </button>
+      );
+    }
+  }
+  
+class Side extends React.Component {
+    renderSquare(i) {
+      return <Square />;
+    }
 
-function side() {
-    return(
-        <div >
-            <button class="tsidebutton" onClick={tClick}>
-            </button>
-            <button class="ctsidebutton" onClick={ctClick}>
-            </button>
-            <button onClick={enemySide}>
-            enemyside?
-            </button>
-            
+tsidebutton()
+{
+  this.props.enemy_side.setState({
+    enemy_side: "ct"
+  })
+}
+
+ctsidebutton()
+{
+  this.setState({
+    enemy_side: "t"
+  })
+}
+  
+    render() {
+      return (
+        <div>
+          <h1> Choose Your Starting Side </h1>
+          <button 
+            class="tsidebutton" 
+            onClick={() => this.tsidebutton()}
+          />
+          <button 
+            class="ctsidebutton"
+            onClick={() => this.ctsidebutton()}
+          />
         </div>
-    );
-}
+      );
+    }
+  }
 
-function tClick(){
-    //nextPath('/calculator')
-    enemy_is_t = false;
-    return <Redirect to='./calculator'/>;
-}
-
-function ctClick(){
-    //nextPath('/calculator')
-    enemy_is_t = true;
-    return <Redirect to='./calculator'/>;
-}
-
-function enemySide(){
-    //nextPath('/calculator')
-    alert(enemy_is_t)
-}
-
-export default side;
+export default Side;

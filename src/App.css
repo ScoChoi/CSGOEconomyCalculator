@@ -1,38 +1,126 @@
-.App {
+html {
+  background-image: url('./images/Background.jpg');
+  background-size: cover;
+}
+
+h1 {
+  color:white;
+  font-family: sans-serif;
+  font-size: 64px;
   text-align: center;
+  margin-top: 75px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.ctsidebutton, .tsidebutton {
+    display:inline-block;
+    width: 150px;
+    height: 150px;
+    display: block;
+    border-radius: 75px;
+    background-size: cover;
+    border-width: 5px;
   }
+  
+.tsidebutton {
+    background-image: url('./images/tsidelogo.jpg');
+    float: left;
+    margin-top: 150px;
+    margin-left: 500px;
+  }
+  
+.ctsidebutton {
+    background-image: url('./images/ctsidelogo.jpg');
+    float: right;
+    margin-top: 150px;
+    margin-right: 500px;
+  }
+
+.calcBox {
+  height: 750px;
+  width: 1500px;
+  background-color: rgb(255, 255, 255, 0.8);
+  margin-top: 75px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.submit {
+  position: absolute;
+  bottom: 3%;
+  left: 48%;
+}
+
+.round {
+  position:absolute;
+  margin-left: 685px;
+  width: 125px;
+  height: 125px;
+  display: block;
+  border-radius: 67.5px;
+  background-size: cover;
+  border-width: 2px;
+  background-image: url('./images/round_background.png');
+}
+
+h2 {
+  margin-top: 17px;
+  color:white;
+  font-family: sans-serif;
+  font-size: 72px;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-text-stroke: 2px black;
+}
+
+/* Dropdown Button */
+.dropbtn {
+  background-color: #ff0000;
   color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 15px;
+  
+
 }
 
-.App-link {
-  color: #61dafb;
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #7a1313;}
+
+.checked::before {
+  position: absolute;
+  left: .4rem;
+  content: '✓';
+  font-weight: 600;
 }

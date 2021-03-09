@@ -17,48 +17,9 @@ html {
   margin: 0;
 }
 
-h1 {
-  position: absolute;
-  align-self: top;
-  left: 39%;
-  color:white;
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-
-.ctsidebutton, .tsidebutton {
-  margin:0 auto;
-  display:inline-block;
-  margin-top: 150px;
-}
-
-.tsidebutton {
-  width: 150px;
-  height: 150px;
-  display: block;
-  border-radius: 75px;
-  background-image: url('./images/tsidelogo.jpg');
-  background-size: cover;
-  border-width: 5px;
-  float: left;
-}
-
-.ctsidebutton {
-  width: 150px;
-  height: 150px;
-  display: block;
-  border-radius: 75px;
-  background-image: url('./images/ctsidelogo.jpg');
-  background-size: cover;
-  border-width: 5px;
-  float: right;
-}
-
-.box {
-  display: flex;
-  
-  height: 50.807vmax;
+html {
   background-image: url('./images/Background.jpg');
   background-size: cover;
+  opacity: 0.8;
 }
 
