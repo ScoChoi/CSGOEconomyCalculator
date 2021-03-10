@@ -36,13 +36,14 @@ h1 {
   }
 
 .calcBox {
-  height: 750px;
+  height: 650px;
   width: 1500px;
   background-color: rgb(255, 255, 255, 0.8);
   margin-top: 75px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 .submit {
@@ -52,7 +53,7 @@ h1 {
 }
 
 .round {
-  position:absolute;
+  /*position:absolute;*/
   margin-left: 685px;
   width: 125px;
   height: 125px;
@@ -61,10 +62,25 @@ h1 {
   background-size: cover;
   border-width: 2px;
   background-image: url('./images/round_background.png');
+  color:white;
+  font-family: sans-serif;
+  font-size: 52px;
+  text-align: center;
+  line-height: 125px;
+  -webkit-text-stroke: 2px black;
 }
 
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+/*
 h2 {
-  margin-top: 17px;
+  margin-top: 18px;
+  margin-left: 44.25px;
   color:white;
   font-family: sans-serif;
   font-size: 72px;
@@ -72,53 +88,95 @@ h2 {
   vertical-align: middle;
   -webkit-text-stroke: 2px black;
 }
+*/
+.loss_bonus {
+  margin-top: 24px;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 20px;
+  
+}
+
+.lb1,
+.lb2,
+.lb3,
+.lb4 {
+  margin-left: 10px;
+  display: inline-block;
+  background-color: grey;
+  height: 7px;
+  width: 16px;
+  border-color: black;
+  border-width: 3px;
+  border-radius: 7px;
+  border-style: solid;
+}
 
 /* Dropdown Button */
-.dropbtn {
+.tDeaths,
+.eBuy,
+.eDeaths,
+.rOutcome {
   background-color: #ff0000;
   color: white;
   padding: 16px;
   font-size: 16px;
   border: none;
-  border-radius: 15px;
-  
-
+  border-radius: 4px;
+  min-width: 142px;
 }
 
+.tDeaths {background-color: #5ecf5e}
+.eBuy {background-color: rgb(121, 91, 168)}
+.eDeaths {background-color: #b8783d}
+.rOutcome {background-color: #2096c5}
+
 /* The container <div> - needed to position the dropdown content */
-.dropdown {
+.variable {
   position: relative;
   display: inline-block;
+  vertical-align: center;
+  
 }
 
 /* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
+.v-content {
+  position: relative;
+  border-style: solid;
+  border-width: 1px;
+  display: block;
   position: absolute;
   background-color: #f1f1f1;
-  min-width: 160px;
+  min-width: 140px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
 
 /* Links inside the dropdown */
-.dropdown-content a {
+.v-content a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
+  align-self: center;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #ddd;}
+.v-content a:hover {background-color: #ddd;}
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
+/*.dropdown:hover .dropdown-content {display: block;}*/
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: #7a1313;}
+.variable:hover .tDeaths {background-color: #3f7c1b}
+.variable:hover .eDeaths {background-color: #804711}
+.variable:hover .eBuy {background-color: #543685}
+.variable:hover .rOutcome{background-color: #16739e;}
 
-.checked::before {
+.checked_team_deaths::before,
+.checked_enemy_deaths::before,
+.checked_enemy_buy::before,
+.checked_round_outcome::before {
   position: absolute;
   right: .4rem;
   content: '✓';
