@@ -1,20 +1,9 @@
 import React from 'react';
 import './App.css';
-import Side from "./Side"
-import Calculator from "./Calculator"
+import Side from "./Side";
+import Calculator from "./Calculator";
+import Result from "./Result";
 
-  class Result extends React.Component {
-    render() {
-      return (
-        <div class="resultBox">
-          <h3>
-            Expected Enemy Buy for round {this.props.round_count}
-          </h3>
-        </div>
-      );
-    }
-  }
-  
 class App extends React.Component {
   constructor(props) {
     super(props)
