@@ -1,25 +1,39 @@
 import React from 'react';
 import './App.css';
-import Side from "./side";
-import Calculator from "./calculator";
+import Side from "./Side";
+import Calculator from "./Calculator";
 import Result from "./Result";
 
-function calc(loss_bonus, enemy_deaths, round_outcome, enemy_buy, team_deaths)
+function result(enemy_money, enemy_side, loss_bonus)
 {
   var nb = ""
-  console.log(enemy_buy)
-  if (enemy_buy == "save") {
-    nb = "Save"
-  } else if (enemy_buy == "force") {
-    nb = "Force"
-  } else if (enemy_buy == "half_buy") {
-    nb = "Half Buy"
-  } else if (enemy_buy == "full_buy") {
-    nb = "Full Buy"
+  if (enemy_side == "ct") {
+    if (enemy_money == 0 && enemy_money <= 11000) {
+      nb = "Save"
+    } 
+    if (enemy_money > 0 && enemy_money <= 11000) {
+      nb = "Force"
+    } else if ((enemy_money > 11000 && enemy_money <= 18750) && (loss_bonus == 0)) {
+      nb = "Half Buy"
+    } else if (enemy_money >= 18750) {
+      nb = "Full Buy"
+    } else {
+      nb = "This shouldn't happen"
+    }
   } else {
-    nb = "This shouldn't happen"
+    if (enemy_money == 0 && enemy_money <= 9500) {
+      nb = "Save"
+    } 
+    if ((enemy_money > 0 && enemy_money <= 9500) && (loss_bonus == 0)) {
+      nb = "Force"
+    } else if (enemy_money > 9500 && enemy_money <= 18500) {
+      nb = "Half Buy"
+    } else if (enemy_money >= 18500) {
+      nb = "Full Buy"
+    } else {
+      nb = "This shouldn't happen"
+    }
   }
-
   return nb
 }
 
@@ -37,6 +51,7 @@ class App extends React.Component {
         enemy_buy: null,
         team_deaths: 0,
         next_buy: null,
+        enemy_money: 800,
     }
   }
 
@@ -117,9 +132,7 @@ class App extends React.Component {
   submitbutton()
   {
     this.setState({
-      next_buy: calc(this.state.loss_bonus, this.state.enemy_deaths,
-                     this.state.round_outcome, this.state.enemy_buy,
-                     this.state.team_deaths)
+      next_buy: result(this.state.enemy_money, this.state.enemy_side, this.state.loss_bonus)
     })
     this.setState({
       round: this.state.round + 1
