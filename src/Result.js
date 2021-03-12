@@ -7,6 +7,9 @@ class Result extends React.Component {
           <h3>
             Expected Enemy Buy for round {this.props.round_count}
           </h3>
+          <h4>
+            { this.props.next_buy }
+          </h4>
         </div>
       );
     }

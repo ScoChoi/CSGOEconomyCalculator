@@ -1,4 +1,4 @@
-# Authors: Scott Choi, ascottychoi@gmail.com / Justin Spidell
+# Authors: Scott Choi, ascottychoi@gmail.com / Justin Spidell, justintspidell@gmail.com
 
 # Description: A CS:GO Economy Calculator
 CS:GO (Counter-Strike Global Offensive) is one of the most popular first-person shooter games in the world, and undoubtedly the most popular one in the western world. Currently my application takes in 4 user-provided inputs for each round: number of teammates killed, number of enemies killed, the type of enemy buy, and the outcome of the round. Using those variables, I have created an algorithm that estimates the amount of money for the enemy side and with that information I give the user an idea of what the enemy team's buy will look like for the following round.

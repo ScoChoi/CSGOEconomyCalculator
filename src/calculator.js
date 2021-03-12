@@ -60,7 +60,7 @@ class Calculator extends React.Component {
           <div class="variable">
               <button class="tDeaths">Team Deaths</button>
                 <div class="v-content">
-                  <a id="0t" onClick={() => this.props.t_deaths("01")}>0</a>
+                  <a id="0t" onClick={() => this.props.t_deaths("0t")}>0</a>
                   <a id="1t" onClick={() => this.props.t_deaths("1t")}>1</a>
                   <a id="2t" onClick={() => this.props.t_deaths("2t")}>2</a>
                   <a id="3t" onClick={() => this.props.t_deaths("3t")}>3</a>
@@ -94,9 +94,9 @@ class Calculator extends React.Component {
             <div class="variable">
               <button class="rOutcome">Round Outcome</button>
                 <div class="v-content">
-                  <a id="bomb" onClick={() => this.props.outcome("bomb")}>Bomb Explodes</a>
-                  <a id="win" onClick={() => this.props.outcome("win")}>Win</a>
-                  <a id="lose" onClick={() => this.props.outcome("lose")}>Lose</a>
+                  <a id="bomb" onClick={() => this.props.round_outcome("bomb")}>Bomb Explodes</a>
+                  <a id="win" onClick={() => this.props.round_outcome("win")}>Win</a>
+                  <a id="lose" onClick={() => this.props.round_outcome("lose")}>Lose</a>
                 </div>
             </div>
         </div>
