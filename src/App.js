@@ -1,8 +1,27 @@
 import React from 'react';
 import './App.css';
-import Side from "./Side";
-import Calculator from "./Calculator";
+import Side from "./side";
+import Calculator from "./calculator";
 import Result from "./Result";
+
+function calc(loss_bonus, enemy_deaths, round_outcome, enemy_buy, team_deaths)
+{
+  var nb = ""
+  console.log(enemy_buy)
+  if (enemy_buy == "save") {
+    nb = "Save"
+  } else if (enemy_buy == "force") {
+    nb = "Force"
+  } else if (enemy_buy == "half_buy") {
+    nb = "Half Buy"
+  } else if (enemy_buy == "full_buy") {
+    nb = "Full Buy"
+  } else {
+    nb = "This shouldn't happen"
+  }
+
+  return nb
+}
 
 class App extends React.Component {
   constructor(props) {
@@ -17,7 +36,7 @@ class App extends React.Component {
         round_outcome: null,
         enemy_buy: null,
         team_deaths: 0,
-
+        next_buy: null,
     }
   }
 
@@ -98,6 +117,11 @@ class App extends React.Component {
   submitbutton()
   {
     this.setState({
+      next_buy: calc(this.state.loss_bonus, this.state.enemy_deaths,
+                     this.state.round_outcome, this.state.enemy_buy,
+                     this.state.team_deaths)
+    })
+    this.setState({
       round: this.state.round + 1
     })
     if ((this.state.round_outcome == "win" || (this.state.round_outcome == "bomb" && this.state.enemy_side == "ct")) && this.state.loss_bonus < 4) {
@@ -109,6 +133,7 @@ class App extends React.Component {
         loss_bonus: this.state.loss_bonus - 1
       })
     } 
+
     if (this.state.round == 15 && this.state.enemy_side == "ct") {
       this.setState({
         enemy_side: "t",
@@ -167,8 +192,8 @@ class App extends React.Component {
           submit={this.submitbutton.bind(this)} 
           e_deaths={this.enemy_deaths.bind(this)}
           t_deaths={this.team_deaths.bind(this)}
-          /*round_outcome={this.roundoutcome.bind(this)}*/
-          outcome = {this.roundoutcome.bind(this)}
+          round_outcome={this.roundoutcome.bind(this)}
+          // outcome = {this.roundoutcome.bind(this)}
           e_buy={this.enemy_buy.bind(this)}
          />
         :null
@@ -176,12 +201,8 @@ class App extends React.Component {
         {
           (this.state.round > 1)?
           <Result
-          loss_bonus={this.state.loss_bonus}
           round_count={this.state.round} 
-          enemy_deaths={this.state.enemy_deaths}
-          round_outcome={this.state.round_outcome}
-          enemy_buy={this.state.enemy_buy}
-          team_deaths={this.state.team_deaths}
+          next_buy={this.state.next_buy}
           />
         :null
         }
