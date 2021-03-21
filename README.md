@@ -12,8 +12,5 @@ Furthermore, killing an enemy, planting the bomb, and defusing the bomb gives yo
 # Challenges
 It is impossible to calculate the exact money of the enemy team, without an API of course. We can never know with 100% certainty what each enemy player buys or when they don't buy. My algorithm was created with the current meta in mind, and takes several decision-making liberties. As players diverge more from the established meta, typical in pro-play, the expectations will diverge further from the actual economy. 
 
-# Algorithm
-TODO
-
 # Future Plans
 My hope is to make this application more practical to use. Inputting the 4 variables does not take too long, but tabbing back and forth from CS:GO can be a nightmare. I want to add more user input variables, but I will try to do it in a way that is still simple to use, since players have about 15 sec between rounds. While creating a phone app version would be very practical, since users could simply input the variables on their phone while in game, I believe the end goal would be connecting the application to an API that tracks real-time progress of a match removing the need for user inputs. Possibly adding this as a functionality to the Faceit enhancer?
